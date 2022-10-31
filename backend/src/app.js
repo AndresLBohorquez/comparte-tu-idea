@@ -1,10 +1,12 @@
 const express = require('express');
-		const app = express();
-		//configuraciones
-		app.set('port', process.env.PORT || 5000)
 
-		//Middlewares
+const app = express();
 
-		//Routes
+//configuraciones
+app.set('port', process.env.PORT || 5000)
 
-		module.exports = app;
+//Middlewares
+
+//Routes
+
+module.exports = app;
