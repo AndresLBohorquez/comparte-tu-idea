@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { faker } = require('@faker-js/faker');
 	const app = require('./app');
+	require('./database');
 
 	app.get('/',(req,res)=>{
 		res.send('Hola mundo desde express')
