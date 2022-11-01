@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: #691193;
+  height: 50px;
+}
+
+header a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+main {
+  padding: 1rem;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.topic {
+  border: 1px #404040 solid;
+  margin: 1.5rem
+}
+
+.topic img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.topic-info {
+  padding: 1rem;
+}
