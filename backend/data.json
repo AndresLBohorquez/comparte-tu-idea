@@ -1,5 +1,5 @@
-const data = {
-    topics: [
+{
+    "topics": [
         {
             "name": "Historia de Primavera",
             "slug": "historia-de-primavera",
@@ -34,9 +34,7 @@ const data = {
             "numReviews": 163
         }
     ]
-};
-
-export default data;
+}
 
 
 

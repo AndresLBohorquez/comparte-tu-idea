@@ -3,20 +3,23 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
+.nav-color {
   background-color: #691193;
-  height: 50px;
+  font-family: cursive;
+
 }
 
-header a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 25px;
+.nav-logo {
+  height: 35px;
+  margin-right: 10px;
+}
+
+.site-container {
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem;
+  flex: 1;
 }
 
 .topics {
@@ -27,6 +30,7 @@ main {
 
 .topic {
   border: 1px #404040 solid;
+  max-width: 300px;
   margin: 1.5rem
 }
 
@@ -34,8 +38,15 @@ main {
   width: 100%;
   max-width: 300px;
   max-height: 200px;
+
 }
 
 .topic-info {
   padding: 1rem;
+}
+
+footer {
+  background-color: #691193;
+  font-family: cursive;
+  color:  #f3e5f5;
 }
