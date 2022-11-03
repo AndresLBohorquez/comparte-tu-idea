@@ -52,9 +52,9 @@ function HomeScreen() {
                             <img src={topic.image} alt={topic.name} />
                         </Link>
                         <div className="topic-info">
-                            <a href={`/topic/${topic.slug}`}>
+                            <Link to={`/topic/${topic.slug}`}>
                                 <p>{topic.name}</p>
-                            </a>
+                            </Link>
                             <p>{topic.description}</p>
                         </div>
                     </div>
