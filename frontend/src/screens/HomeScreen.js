@@ -1,9 +1,12 @@
 //import data  from "../data";
 import { useEffect, useReducer } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import logger from 'use-reducer-logger';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Topic from '../components/Topic';
+import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -19,18 +22,16 @@ const reducer = (state, action) => {
 }
 
 function HomeScreen() {
-    const [{ loading, error, topics }, dispatch] = useReducer(logger(reducer), {
+    const [{ loading, error, topics }, dispatch] = useReducer(reducer, {
         topics: [],
         loading: true, error: '',
     });
 
-
-    //const [topics, setTopics] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             dispatch({ type: 'FETCH_REQUEST' });
             try {
-                const result = await axios.get('http://localhost:5000/api/topics')
+                const result = await axios.get('http://localhost:5001/api/topics')
                 dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
             } catch (err) {
                 dispatch({ type: 'FETCH_FAIL', payload: err.message });
@@ -38,30 +39,23 @@ function HomeScreen() {
         };
         fetchData();
     }, []);
-    return <div>
-        <h1>Lista de Temas</h1>
+    return (<div>
+        <Helmet><title>Comparte tu idea</title></Helmet>
+        <h1>Lista de Temas </h1>
         <div className="topics">
-            {loading ? (
-                <div>Cargando datos...</div>
-            ) : error ? (
-                <div>{error}</div>
-            ) : (
-                topics.map((topic) => (
-                    <div className="topic" key={topic.slug}>
-                        <Link to={`/topic/${topic.slug}`}>
-                            <img src={topic.image} alt={topic.name} />
-                        </Link>
-                        <div className="topic-info">
-                            <Link to={`/topic/${topic.slug}`}>
-                                <p>{topic.name}</p>
-                            </Link>
-                            <p>{topic.description}</p>
-                        </div>
-                    </div>
-                ))
-            )}
+            {loading ? (<LoadingBox />)
+                : error ? (<MessageBox variant="danger">{error}</MessageBox>)
+                    : (<Row>
+                        {topics.map((topic) => (
+                            <Col key={topic.slug} sm={4} md={4} lg={4} className="mb-3">
+                                <Topic topic={topic}></Topic>
+                            </Col>
+                        ))}
+                    </Row>
+                    )}
         </div>
     </div>
-}
+    )
+};
 
 export default HomeScreen;

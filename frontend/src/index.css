@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #dbdbf0;
 }
 
 .nav-color {
@@ -34,11 +35,13 @@ main {
   margin: 1.5rem
 }
 
-.topic img {
+.topic-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   max-width: 300px;
-  max-height: 200px;
-
+  height: 150px;
 }
 
 .topic-info {
@@ -48,5 +51,65 @@ main {
 footer {
   background-color: #691193;
   font-family: cursive;
-  color:  #f3e5f5;
+  color: #f3e5f5;
+}
+
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.btn-outline-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6a0bd2;
+  --bs-btn-border-color: #6a0bd2;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #691193;
+  --bs-btn-hover-border-color: #6a0bd2;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #6a0bd2;
+  --bs-btn-active-border-color: #6a0bd2;
+  --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #6a0bd2;
+  --bs-btn-disabled-border-color: #6a0bd2;
+}
+
+.decoration-none-gr {
+  text-decoration: none;
+  color: #6b6b6b;
+}
+
+.decoration-none-link {
+  text-decoration: none;
+  color: rgba(218, 123, 0, 0.911);
+}
+
+.rating-text {
+  font-size: 11px;
+  font-weight: lighter;
+  margin-left: 3px;
+}
+
+.rating-ico {
+  color: rgba(221, 162, 0, 0.87);
+}
+
+.img-topic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 640px;
+  height: 394px;
+}
+
+.mg-ll {
+  margin-left: 1rem;
+}
+
+.card-text-sz {
+  height: 50px;
 }
