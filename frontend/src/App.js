@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import TopicScreen from './screens/TopicScreen';
+import LoginScreen from './screens/LoginScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -25,6 +26,7 @@ function App() {
             <Routes>
               <Route path="/topic/:slug" element={<TopicScreen />} />
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/login" element={<LoginScreen />} />
             </Routes>
           </Container>
 
