@@ -1,33 +1,34 @@
 const express = require('express');
-const datafull = require('../data.json');
 const cors = require('cors');
+const seedRouter = require('./routes/seedRoutes.js');
+const topicRouter = require('./routes/topicRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
+//Middlewares
 app.use(cors());
 
-app.get('/api/topics', (req, res) => {
-    res.send(datafull.topics);
-})
+app.use(express.json());
 
-app.get('/api/topics/slug/:slug', (req, res) => {
-    const topic = datafull.topics.find((x) => x.slug === req.params.slug);
-    if (topic) {
-        res.send(topic);
-    }
-    else {
-        res.status(404).send({ message: 'Tema no encontrado' });
-    }
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
+//Routes
+app.use('/api/seed', seedRouter);
+app.use('/api/topics', topicRouter);
+app.use('/api/users', userRouter);
 
+app.use((err, req, res, next) => {
+    res.status(500).send({ message: err.message });
+});
 
-
-//configuraciones
+//Configuraciones
 app.set('port', process.env.PORT || 5001)
 
-//Middlewares
 
-//Routes
 
 module.exports = app;

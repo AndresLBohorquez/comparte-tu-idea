@@ -2,10 +2,14 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import TopicScreen from './screens/TopicScreen';
-import LoginScreen from './screens/LoginScreen';
+import SigninScreen from './screens/SigninScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
+import SignupScreen from './screens/SignupScreen';
+import TermsScreen from './screens/TermsScreen';
+import PolicyScreen from './screens/PolicyScreen';
+import ForgetPasswordScreen from './screens/ForgetPasswordScreen';
 
 function App() {
   return (
@@ -26,7 +30,11 @@ function App() {
             <Routes>
               <Route path="/topic/:slug" element={<TopicScreen />} />
               <Route path="/" element={<HomeScreen />} />
-              <Route path="/login" element={<LoginScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/signup" element={<SignupScreen />} />
+              <Route path="/terms" element={<TermsScreen />} />
+              <Route path="/policy" element={<PolicyScreen />} />
+              <Route path="/forget-password" element={<ForgetPasswordScreen />} />
             </Routes>
           </Container>
 

@@ -36,12 +36,10 @@ main {
 }
 
 .topic-img {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  object-fit: cover;
   width: 100%;
-  max-width: 300px;
-  height: 150px;
+  max-height: 167.633px;
+  
 }
 
 .topic-info {
@@ -112,4 +110,9 @@ footer {
 
 .card-text-sz {
   height: 50px;
+}
+
+.card-sz{
+  max-width: 300px;
+  
 }

@@ -47,7 +47,7 @@ function HomeScreen() {
                 : error ? (<MessageBox variant="danger">{error}</MessageBox>)
                     : (<Row>
                         {topics.map((topic) => (
-                            <Col key={topic.slug} sm={4} md={4} lg={4} className="mb-3">
+                            <Col key={topic.slug} className="mb-3">
                                 <Topic topic={topic}></Topic>
                             </Col>
                         ))}

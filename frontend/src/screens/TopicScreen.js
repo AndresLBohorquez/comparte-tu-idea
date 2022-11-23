@@ -85,15 +85,12 @@ function TopicScreen() {
                                     <Card.Link href="#">Comentar</Card.Link>
                                     <Card.Link href="#">Calificar</Card.Link>
                                 </Col>
-
                                 <Col className="col-sm-8"></Col>
                                 <Col className="4"><Rating rating={topic.rating} />
                                     <Reviews numReviews={topic.numReviews} /></Col>
-
                             </Row>
                         </Card.Body>
                     </Card>
-
                 </div>)
     )
 }

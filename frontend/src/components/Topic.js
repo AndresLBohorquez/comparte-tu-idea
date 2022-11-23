@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 function Topic(props) {
     const { topic } = props;
     return (
-        <CardGroup className='card-sz'>
+        <CardGroup className="card-sz">
             <Card  key={topic.slug}>
                 <Link to={`/topic/${topic.slug}`}>
                     <Card.Img className='topic-img' variant="top" src={topic.image} alt={topic.name} />
@@ -25,9 +25,6 @@ function Topic(props) {
                             <Reviews numReviews={topic.numReviews} />
                         </Col>
                     </Row>
-
-
-
                 </Card.Body>
             </Card>
 

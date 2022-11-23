@@ -8,7 +8,7 @@ mongoose.connect(URI);
 const connection = mongoose.connection;
 
 connection.once('open', () =>{
-    console.log('Conexión a la base de datos con éxito!')
+    console.log('Database success connection')
 });
 
 module.exports = connection;
